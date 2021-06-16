@@ -107,8 +107,8 @@ describe("htmlcanvaselement", () => {
       const gotPNG = gotDataURL.body;
       const gotImg = PNG.sync.read(gotPNG);
 
-      assert.strictEqual(expectedImg.width, gotImg.width, "width");
-      assert.strictEqual(expectedImg.height, gotImg.height, "height");
+      assert.strictEqual(gotImg.width, expectedImg.width, "width");
+      assert.strictEqual(gotImg.height, expectedImg.height, "height");
       assert.strictEqual(Buffer.compare(expectedImg.data, gotImg.data), 0, "byte-level comparison");
       t.done();
     },
