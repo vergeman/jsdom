@@ -18,8 +18,8 @@ interface CSSStyleSheet : StyleSheet {
 //   boolean disabled = false;
 // };
 
-// partial interface CSSStyleSheet {
-//   [SameObject] readonly attribute CSSRuleList rules;
-//   long addRule(optional DOMString selector = "undefined", optional DOMString style = "undefined", optional unsigned long index);
-//   undefined removeRule(optional unsigned long index = 0);
-// };
+partial interface CSSStyleSheet {
+  [SameObject] readonly attribute CSSRuleList rules;
+  long addRule(optional DOMString selector = "undefined", optional DOMString style = "undefined", optional unsigned long index);
+  undefined removeRule(optional unsigned long index = 0);
+};
