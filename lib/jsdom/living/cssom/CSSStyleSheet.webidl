@@ -1,7 +1,7 @@
 // https://drafts.csswg.org/cssom/#cssstylesheet
 [Exposed=Window]
 interface CSSStyleSheet : StyleSheet {
-  // constructor(optional CSSStyleSheetInit options= {});
+  constructor(optional CSSStyleSheetInit options= {});
 
   // readonly attribute CSSRule? ownerRule;
   [SameObject] readonly attribute CSSRuleList cssRules;
@@ -12,11 +12,11 @@ interface CSSStyleSheet : StyleSheet {
   //undefined replaceSync(USVString text);
 };
 
-// dictionary CSSStyleSheetInit {
-//   DOMString baseURL = null;
-//   (MediaList or DOMString) media = "";
-//   boolean disabled = false;
-// };
+dictionary CSSStyleSheetInit {
+  DOMString baseURL = null;
+  (MediaList or DOMString) media = "";
+  boolean disabled = false;
+};
 
 partial interface CSSStyleSheet {
   [SameObject] readonly attribute CSSRuleList rules;
