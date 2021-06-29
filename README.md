@@ -1,3 +1,53 @@
+# JSDOM Working Dev Notes
+
+CSSOM parser is tightly coupled with it's own object model.
+
+currently blocked, as I don't see a way to get
+`StyleSheet.parentStyleSheet` reference to use jsdom CSSOM.
+
+So any PR's would be breaking functionality. Not sure how to resolve
+it without looping through the elements or accessing the nodes during
+parse time.
+
+
+## DEV Notes
+
+docker setup (./docker_run.sh) in `/jsdom-live` bind mounts over
+`/jsdom` and `/cssom` so I can repl debug over changes.
+
+
+Terminals:
+
+1. a repl runner in `/jsdom-live`
+2. a container for tests running in `jsdom`
+3. another terminal for the greps
+
+lol when in doubt: `yarn prepare && yarn pretest.`
+
+
+## Helpful Links
+
+#### CSS
+
+Schema, blueprint: https://drafts.csswg.org/cssom/#css-object-model
+
+
+#### WebIDL
+
+working notes: https://github.com/jsdom/webidl2js
+
+doc: https://heycam.github.io/webidl/#SameObject
+
+
+#### CSSOM
+
+Parser and current obj model light: https://github.com/NV/CSSOM/blob/master/lib/parse.js
+
+---
+
+
+
+
 <h1 align="center">
     <img width="100" height="100" src="logo.svg" alt=""><br>
     jsdom
